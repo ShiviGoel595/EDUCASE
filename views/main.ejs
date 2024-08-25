@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    
+    <meta charset="UTF-8" />
+    <title>Random Cocktail Recipe</title>
+    <link href="style.css" rel="stylesheet" />
+
+  </head>
+  <body>
+
+    <h1>HTML Geolocation</h1>
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Get your current location</button>
+<button onclick="getLocation()">List of all Schools</button>
+<button onclick="getLocation()">Sort list according to nearby location</button>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+</script>
+
+  </body>
+</html>
